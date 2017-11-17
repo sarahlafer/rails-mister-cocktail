@@ -1,17 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <p class="name">
+    <strong>Name:</strong>
+    <%= @cocktail.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
+  <ul><% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> <%= dose.ingredient.name %> -
+      <%= link_to 'Delete dose', dose_path(dose), method: :delete %>
+      <% end %></li>
+    </p>
 
-<p><% @cocktail.doses.each do |dose| %>
-  <%= dose.description %> <%= dose.ingredient.name %>
-<%= link_to 'Delete dose', dose_path(dose), method: :delete %>
-  <% end %>
-</p>
+  </ul><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
 
-
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-<%= link_to 'Create new dose', new_cocktail_dose_path(@cocktail) %> |
-<%= link_to 'Back', cocktails_path %>
+  <div class="btn-pink">
+    <%= link_to 'Edit', edit_cocktail_path(@cocktail) %>
+  </div> -
+  <div class="btn-pink">
+    <%= link_to 'Create new dose', new_cocktail_dose_path(@cocktail) %>
+  </div> -
+  <div class="btn-pink">
+    <%= link_to 'Back', cocktails_path %>
+  </div>
+</div>

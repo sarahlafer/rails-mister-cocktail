@@ -1,2 +1,39 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+
+.container a {
+  text-decoration: none;
+  color: #722157;
+}
+
+.container a:hover {
+  color: #C35C95;
+}
+
+
+.btn-pink {
+  background-color: #FD71A0;
+  padding: 5px;
+  border: thin solid #2C2C2C;
+  border-radius: 5px;
+}
+
+.name {
+  font-size: 50px;
+  color: #FD71A0;
+}
+
+.container h1 {
+  color: #FD71A0;
+}
+

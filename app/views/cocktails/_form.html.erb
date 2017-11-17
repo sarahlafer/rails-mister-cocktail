@@ -16,7 +16,13 @@
     <%= form.text_field :name, id: :cocktail_name %>
   </div>
 
+  <div class="field">
+    <%= form.file_field :photo %>
+    <%= form.file_field :photo_cache, as: :hidden %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
